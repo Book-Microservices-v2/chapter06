@@ -1,0 +1,22 @@
+.display-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.challenge {
+  font-size: 4em;
+}
+
+th {
+  padding-right: 0.5em;
+  border-bottom: solid 1px;
+}
+
+.badge {
+  font-size: x-small;
+  border: 2px solid dodgerblue;
+  border-radius: 4px;
+  padding: 0.2em;
+  margin: 0.1em;
+}

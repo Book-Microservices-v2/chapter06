@@ -1,0 +1,16 @@
+@startuml
+skinparam dpi 300
+scale 3
+skinparam class {
+BackgroundColor Ivory
+ArrowColor DarkGrey
+BorderColor Silver
+}
+
+interface LeaderBoardService
+
+LeaderBoardController "1" o-- "1" LeaderBoardService : uses >
+LeaderBoardServiceImpl .up.|> LeaderBoardService : implements
+LeaderBoardServiceImpl "1" o-down- "1" BadgeRepository : uses >
+LeaderBoardServiceImpl "1" o-down- "1" ScoreRepository : uses >
+@enduml

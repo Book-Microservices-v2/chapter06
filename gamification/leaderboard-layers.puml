@@ -1,0 +1,18 @@
+@startuml
+skinparam dpi 300
+scale 3
+skinparam class {
+BackgroundColor Ivory
+ArrowColor DarkGrey
+BorderColor Silver
+}
+
+interface GameService
+interface BadgeProcessor
+
+GameController "1" o-- "1" GameService : uses >
+GameServiceImpl .|> GameService : implements
+GameServiceImpl "1" o-up- "*" BadgeProcessor : uses many
+GameServiceImpl "1" o-down- "1" BadgeRepository : uses >
+GameServiceImpl "1" o-down- "1" ScoreRepository : uses >
+@enduml

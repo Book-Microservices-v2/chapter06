@@ -12,8 +12,7 @@ class ChallengeComponent extends React.Component {
             user: '',
             message: '',
             guess: 0,
-            lastAttempts: [],
-            userId: null
+            lastAttempts: []
         };
         this.handleSubmitResult = this.handleSubmitResult.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -61,7 +60,6 @@ class ChallengeComponent extends React.Component {
                             this.updateMessage("Oops! Your guess " + json.resultAttempt +
                                 " is wrong, but keep playing!");
                         }
-                        this.setState({userId: json.user.id});
                         this.updateLastAttempts(this.state.user);
                         this.refreshChallenge();
                     });
@@ -125,7 +123,7 @@ class ChallengeComponent extends React.Component {
                 {this.state.lastAttempts.length > 0 &&
                     <LastAttemptsComponent lastAttempts={this.state.lastAttempts}/>
                 }
-                <LeaderBoardComponent userId={this.state.userId}/>
+                <LeaderBoardComponent/>
             </div>
         );
     }
